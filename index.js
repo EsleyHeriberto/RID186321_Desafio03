@@ -38,11 +38,6 @@ const taskCompleted = async (taskID, titleID, buttonID) => {
     cardItem.removeChild(button);
     cardItem.appendChild(img);
 
-    setTimeout(() => {
-        cardItem.style.opacity = "0";
-        promiseToRemove(taskID);        
-    }, 4000);
-
     const tasks = getTasksInLocalStorage();
     tasks[taskID-1].checked = true;
     addTasksInLocalStorage(tasks);
